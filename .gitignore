@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Env — .env berisi secret, jangan pernah di-commit.
+# .env.example BOLEH di-commit (hanya template, tanpa nilai asli).
+.env
+.env.*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

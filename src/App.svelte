@@ -4,14 +4,15 @@
   const STAGING = 'https://staging-merchant-api.nujek.co.id';
   const PROD = 'https://merchant-api.nujek.co.id';
 
-  // Kredensial disimpan di localStorage (sample saja — untuk produksi,
-  // signing dilakukan di server, secret jangan sampai ke browser).
+  // Nilai awal: localStorage (bila pernah diisi di form) -> .env
+  // (VITE_*) -> bawaan staging. localStorage mengalahkan .env.
   const saved = JSON.parse(localStorage.getItem('nujek-openapi') || '{}');
+  const env = import.meta.env;
 
-  let baseUrl = $state(saved.baseUrl || STAGING);
-  let apiKey = $state(saved.apiKey || '');
-  let secret = $state(saved.secret || '');
-  let storeId = $state(saved.storeId || '');
+  let baseUrl = $state(saved.baseUrl || env.VITE_API_BASE_URL || STAGING);
+  let apiKey = $state(saved.apiKey || env.VITE_API_KEY || '');
+  let secret = $state(saved.secret || env.VITE_API_SECRET || '');
+  let storeId = $state(saved.storeId || env.VITE_STORE_ID || '');
   let useProxy = $state(saved.useProxy !== false);
   let showSecret = $state(false);
   let orderStatus = $state('');

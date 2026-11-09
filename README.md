@@ -14,11 +14,18 @@ npm run build      # build produksi -> dist/
 
 ## Cara pakai
 
-1. Buat API key di aplikasi Nujek Merchant → Pengaturan → Developer
+1. Salin `.env.example` menjadi `.env` dan isi kredensialmu:
+   ```bash
+   cp .env.example .env
+   ```
+   Nilai `.env` dipakai sebagai nilai awal form. Jangan pernah commit
+   file `.env` (sudah ada di `.gitignore`).
+2. Buat API key di aplikasi Nujek Merchant → Pengaturan → Developer
    (owner/manager). Secret hanya ditampilkan sekali saat dibuat.
-2. Isi **API Key**, **Secret**, dan **ID Toko** di aplikasi.
-3. Pilih base URL (Staging / Produksi).
-4. Klik salah satu tombol endpoint — respons JSON tampil di bawah.
+3. Isi **API Key**, **Secret**, dan **ID Toko** di aplikasi (atau lewat
+   `.env` di atas).
+4. Pilih base URL (Staging / Produksi).
+5. Klik salah satu tombol endpoint — respons JSON tampil di bawah.
 
 **Penting — IP whitelist:** key terikat ke satu toko dan wajib punya
 minimal 1 IP whitelist. IP publik komputer kamu harus masuk whitelist,
