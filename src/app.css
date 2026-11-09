@@ -1,0 +1,11 @@
+/* Base global — tema gelap Nujek. Gaya komponen ada di App.svelte. */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: #0b0f0d;
+  color: #e8efe9;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
